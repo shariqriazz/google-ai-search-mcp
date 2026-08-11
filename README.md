@@ -79,6 +79,28 @@ google-ai-search-mcp
 
 **Note:** Running standalone requires setting necessary environment variables (like `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION`, `GEMINI_API_KEY`, authentication credentials if not using ADC) in your shell environment before executing the command.
 
+### Docker
+
+Build the local container image:
+
+```bash
+docker build -t google-ai-search-mcp .
+```
+
+Run with the Gemini API provider:
+
+```bash
+docker run --rm -i \
+  -e AI_PROVIDER=gemini \
+  -e GEMINI_API_KEY \
+  google-ai-search-mcp
+```
+
+For Vertex AI, pass `AI_PROVIDER=vertex`, `GOOGLE_CLOUD_PROJECT`, and optionally
+`GOOGLE_CLOUD_LOCATION`. Application Default Credentials must also be available
+inside the container, normally through a read-only credential mount. Do not bake
+API keys or service-account files into the image.
+
 ## Running with Cline
 
 1.  **Configure MCP Settings:** Add/update the configuration in your Cline MCP settings file (e.g., `.roo/mcp.json`). You have two primary ways to configure the command:
