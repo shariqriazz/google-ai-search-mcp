@@ -1,8 +1,10 @@
 {
   "name": "google-ai-search-mcp",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A Model Context Protocol server providing Google AI-powered search and documentation tools for developers",
+  "mcpName": "io.github.shariqriazz/google-ai-search-mcp",
   "license": "MIT",
+  "author": "Shariq Riaz",
   "type": "module",
   "bin": {
     "google-ai-search-mcp": "build/index.js"
@@ -16,11 +18,23 @@
     "url": "https://github.com/shariqriazz/google-ai-search-mcp/issues"
   },
   "files": [
-    "build"
+    "build",
+    "server.json"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "gemini",
+    "google-ai",
+    "mcp",
+    "model-context-protocol",
+    "vertex-ai"
   ],
   "scripts": {
     "build": "bun run tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "prepare": "bun run build",
+    "test:smoke": "bun run build && node scripts/smoke-mcp.mjs",
     "watch": "bun run tsc --watch",
     "inspector": "bunx @modelcontextprotocol/inspector build/index.js"
   },

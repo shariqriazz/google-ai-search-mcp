@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import dotenv from 'dotenv';
+import { readFileSync } from 'node:fs';
 import path from 'path';
 
 // Load .env file from the current working directory (where npx/node is run)
@@ -24,9 +25,13 @@ import { callGenerativeAI, CombinedContent } from './google_ai_client.js';
 import { allTools, toolMap } from './tools/index.js';
 import { buildInitialContent, getToolsForApi } from './tools/tool_definition.js';
 
+const packageJson = JSON.parse(
+  readFileSync(new URL('../package.json', import.meta.url), 'utf8')
+) as { version: string };
+
 // --- MCP Server Setup ---
 const server = new Server(
-  { name: "google-ai-search-mcp", version: "1.0.0" },
+  { name: "google-ai-search-mcp", version: packageJson.version },
   { capabilities: { tools: {} } }
 );
 

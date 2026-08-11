@@ -1,0 +1,51 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.shariqriazz/google-ai-search-mcp",
+  "title": "Google AI Search MCP",
+  "description": "Google AI search and documentation tools for MCP clients using Vertex AI or the Gemini API.",
+  "repository": {
+    "url": "https://github.com/shariqriazz/google-ai-search-mcp",
+    "source": "github"
+  },
+  "version": "1.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "google-ai-search-mcp",
+      "version": "1.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "AI_PROVIDER",
+          "description": "Select vertex or gemini. Defaults to vertex.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "GOOGLE_CLOUD_PROJECT",
+          "description": "Google Cloud project ID. Required when AI_PROVIDER is vertex.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "GOOGLE_CLOUD_LOCATION",
+          "description": "Vertex AI location. Defaults to us-central1.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "GEMINI_API_KEY",
+          "description": "Gemini API key. Required when AI_PROVIDER is gemini.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

@@ -62,7 +62,7 @@ For a source-linked comparison of the design pressures across this project and s
 
 ## Usage (Standalone / NPX)
 
-Once published to npm, you can run this server directly using `npx`:
+The package is published to npm and can be run directly with `npx`:
 
 ```bash
 # Ensure required environment variables are set (e.g., GOOGLE_CLOUD_PROJECT or GEMINI_API_KEY)

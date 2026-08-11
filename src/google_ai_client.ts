@@ -31,7 +31,7 @@ try {
     } else {
         throw new Error("Missing Gemini API key or Vertex AI project/location configuration.");
     }
-    console.log("Initialized GoogleGenAI with config:", aiConfig.modelId);
+    console.error("Initialized GoogleGenAI with config:", aiConfig.modelId);
 } catch (error: any) {
     console.error(`Error initializing GoogleGenAI:`, error.message);
     process.exit(1);
@@ -66,7 +66,7 @@ export async function callGenerativeAI(
         if (nonSearchTools.length > 0) {
              console.warn(`Gemini Provider: Function calling tools detected but adaptation/usage with @google/generative-ai is not fully implemented.`);
         } else {
-             console.log(`Gemini Provider: Explicit googleSearchRetrieval tool filtered out (search handled implicitly or by model).`);
+             console.error(`Gemini Provider: Explicit googleSearchRetrieval tool filtered out (search handled implicitly or by model).`);
         }
         filteredToolsForVertex = undefined;
         adaptedToolsForGemini = undefined; // Keep undefined for now
