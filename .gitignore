@@ -4,6 +4,8 @@ build/
 .env*
 !.env.example
 *.zip
+*.mcpb
+.mcpb-build/
 *.md
 !README.md
 !SECURITY.md

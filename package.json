@@ -34,6 +34,7 @@
   "scripts": {
     "build": "bun run tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "prepare": "bun run build",
+    "bundle:mcpb": "bun run build && node scripts/stage-mcpb.mjs && mcpb validate .mcpb-build/manifest.json && mcpb pack .mcpb-build google-ai-search-mcp.mcpb && mcpb info google-ai-search-mcp.mcpb",
     "test:smoke": "bun run build && node scripts/smoke-mcp.mjs",
     "watch": "bun run tsc --watch",
     "inspector": "bunx @modelcontextprotocol/inspector build/index.js"
@@ -48,6 +49,7 @@
     "zod-to-json-schema": "^3.24.5"
   },
   "devDependencies": {
+    "@anthropic-ai/mcpb": "2.1.2",
     "@types/diff": "^7.0.2",
     "@types/minimatch": "^5.1.2",
     "@types/node": "^20.11.24",

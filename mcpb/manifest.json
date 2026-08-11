@@ -1,0 +1,96 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/mcpb/main/dist/mcpb-manifest.schema.json",
+  "manifest_version": "0.3",
+  "name": "google-ai-search-mcp",
+  "display_name": "Google AI Search MCP",
+  "version": "1.1.1",
+  "description": "Google AI search and technical documentation tools for MCP clients.",
+  "long_description": "Seven tools for web-grounded technical research, documentation retrieval, code analysis, technology comparisons, project guidance, and architecture review using the Gemini API.",
+  "author": {
+    "name": "Shariq Riaz",
+    "email": "shariq@orchestriai.com",
+    "url": "https://www.orchestriai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shariqriazz/google-ai-search-mcp.git"
+  },
+  "homepage": "https://www.orchestriai.com/services/mcp-development",
+  "documentation": "https://github.com/shariqriazz/google-ai-search-mcp#readme",
+  "support": "https://github.com/shariqriazz/google-ai-search-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "build/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/build/index.js"
+      ],
+      "env": {
+        "AI_PROVIDER": "gemini",
+        "GEMINI_API_KEY": "${user_config.gemini_api_key}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "answer_query_websearch",
+      "description": "Answer a technical question using Google Search grounding."
+    },
+    {
+      "name": "explain_topic_with_docs",
+      "description": "Explain a software topic using current official documentation."
+    },
+    {
+      "name": "get_doc_snippets",
+      "description": "Retrieve concise technical answers and code snippets from documentation."
+    },
+    {
+      "name": "generate_project_guidelines",
+      "description": "Generate project guidance for a specified technology stack."
+    },
+    {
+      "name": "code_analysis_with_docs",
+      "description": "Review code against current documentation and implementation guidance."
+    },
+    {
+      "name": "technical_comparison",
+      "description": "Compare technologies against user-supplied criteria."
+    },
+    {
+      "name": "architecture_pattern_recommendation",
+      "description": "Recommend architecture patterns for supplied requirements and a technology stack."
+    }
+  ],
+  "keywords": [
+    "gemini",
+    "google-ai",
+    "documentation",
+    "search",
+    "developer-tools"
+  ],
+  "license": "MIT",
+  "user_config": {
+    "gemini_api_key": {
+      "type": "string",
+      "title": "Gemini API key",
+      "description": "API key used for Gemini requests. The key is stored as a sensitive value by the host.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "privacy_policies": [
+    "https://www.orchestriai.com/privacy"
+  ]
+}
