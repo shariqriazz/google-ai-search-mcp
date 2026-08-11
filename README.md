@@ -2,6 +2,11 @@
 
 This project implements a Model Context Protocol (MCP) server that provides a comprehensive suite of Google AI-powered search and documentation tools specifically designed to help AI coders overcome LLM knowledge gaps and information limitations.
 
+## Implementation notes
+
+Provider selection and credentials are resolved at runtime, so a tool being listed does not prove that its upstream provider is configured or reachable. Treat model-produced comparisons, architecture guidance, and security analysis as material to verify against the cited primary sources rather than deterministic findings.
+
+For a source-linked comparison of the design pressures across this project and six other public MCP implementations, see [What building seven MCP servers taught me about production MCP](https://www.orchestriai.com/blog/lessons-building-seven-mcp-servers).
 
 ## Features
 
@@ -23,8 +28,8 @@ This project implements a Model Context Protocol (MCP) server that provides a co
 
 ### Advanced Analysis Tools
 *   `code_analysis_with_docs`: Evidence-based code analysis with standardized citations, severity categorization, and actionable recommendations by comparing code against official documentation best practices.
-*   `technical_comparison`: Enhanced technology comparison with quantitative benchmarks, performance metrics, market adoption statistics, and detailed evidence-based analysis across multiple criteria.
-*   `architecture_pattern_recommendation`: Comprehensive architecture guidance with performance metrics, quantitative benefits, detailed implementation roadmaps, and evidence-based pattern recommendations for specific use cases.
+*   `technical_comparison`: Produces technology comparisons across requested criteria using current search context where available. Verify quantitative or market claims against the cited primary sources.
+*   `architecture_pattern_recommendation`: Produces architecture options, tradeoffs, and implementation considerations for a described use case. Validate the recommendation against the system's actual constraints before adopting it.
 
 *(Note: Input/output schemas for each tool are defined in their respective files within `src/tools/` and exposed via the MCP server.)*
 
