@@ -33,36 +33,7 @@
       }
     }
   },
-  "tools": [
-    {
-      "name": "answer_query_websearch",
-      "description": "Answer a technical question using Google Search grounding."
-    },
-    {
-      "name": "explain_topic_with_docs",
-      "description": "Explain a software topic using current official documentation."
-    },
-    {
-      "name": "get_doc_snippets",
-      "description": "Retrieve concise technical answers and code snippets from documentation."
-    },
-    {
-      "name": "generate_project_guidelines",
-      "description": "Generate project guidance for a specified technology stack."
-    },
-    {
-      "name": "code_analysis_with_docs",
-      "description": "Review code against current documentation and implementation guidance."
-    },
-    {
-      "name": "technical_comparison",
-      "description": "Compare technologies against user-supplied criteria."
-    },
-    {
-      "name": "architecture_pattern_recommendation",
-      "description": "Recommend architecture patterns for supplied requirements and a technology stack."
-    }
-  ],
+  "tools_generated": true,
   "keywords": [
     "gemini",
     "google-ai",
