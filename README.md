@@ -1,6 +1,6 @@
 # Google AI Search MCP
 
-[![Smithery](https://smithery.ai/badge/ishariqriaz/google-ai-search-mcp)](https://smithery.ai/servers/ishariqriaz/google-ai-search-mcp)
+[![LightNow capabilities](https://lightnow.ai/badge/io.github.shariqriazz/google-ai-search-mcp)](https://lightnow.ai/servers/io.github.shariqriazz/google-ai-search-mcp)
 
 This project implements a Model Context Protocol (MCP) server that provides a comprehensive suite of Google AI-powered search and documentation tools specifically designed to help AI coders overcome LLM knowledge gaps and information limitations.
 
